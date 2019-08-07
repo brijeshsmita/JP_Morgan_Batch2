@@ -1,0 +1,19 @@
+Security: 
+	Restricting access to the resource
+	based on authentication and authorization.
+
+Authentication : providing access to the user on the correct credentials
+
+Authorization : providing access only to the authorized user.
+
+Spring Security: it very powerful and eaziest way to secure our spring application
+
+Step 1: Add starter-security, starter-web in pom.xml
+
+
+
+
+
+
+
+

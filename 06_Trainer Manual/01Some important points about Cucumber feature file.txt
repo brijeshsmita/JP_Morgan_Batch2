@@ -1,0 +1,19 @@
+Some important points about Cucumber feature file
+Below are some of the important points that you need to be aware of w.r.t cucumber feature files –
+1. All feature files in Cucumber should have the extension .feature in its name. If .feature is not present, then cucumber won’t recognize it as a feature file
+2. In each feature file, you need to add a keyword called ‘Feature’. Without this, you will see compile errors in your script
+3. Each scenario in a feature file should also start with a keyword. We have used keyword ‘Scenario’ for the feature file in this article. There is a different keyword as well, which we will discuss in detail in a different article
+4. Each feature file can have multiple number of scenarios. Our example in the previous section has only one scenario in the feature file
+5. It’s not necessary that all the scenarios have all these keywords – ‘given’, ‘when’, ‘then’ and ‘and’. You can write scenarios where you can use only one keyword in all the steps. For example, the below scenario which only uses Given keyword is perfectly valid
+1
+2
+3
+4
+5
+6	Scenario: Check that main elements on Google Homepage are displayed
+Given I launch Chrome browser
+Given I open Google Homepage
+Given I verify that the page displays search text box
+Given the page displays Google Search button
+Given the page displays Im Feeling Lucky button
+Apart from this, you can also change the order of the keywords. For example, you can use ‘and’ or ‘then’ before ‘given’ also. The only reason we use all given, when, then keywords is due to readability. And the readability of a scenario is much better when you use these keywords in proper order.

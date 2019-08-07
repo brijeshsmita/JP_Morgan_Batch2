@@ -1,0 +1,64 @@
+Spring Boot JPA Rest
+
+1> pom.xml -> web,,devtools,jpa ,oracle,(oracle repository),jackson
+2>create Model class and Annotate the Entity with JPA annotations
+@Entity
+@Table
+	@Id
+	@Column
+2>In src/main/resources folder
+	a> create ddl.sql (for drop and create table queries)
+	b> create dml.sql (for insert queries)
+3>In src/main/resources/application.properties file
+	configure
+	a> server port
+	b> datasource
+	c> jpa
+	d> security and many more ... refer documentations
+
+4> create Dao layer
+	a> interface with CRUD methods
+	b> Implementation class
+5> In Dao Implementation class
+	a> annotate it with @Repository
+	b> Inject EntityManager with the help of 
+		@PersistenceContext
+
+	@PersistenceContext
+	private EntityManager entityManager;
+	c> Override unimplemented method 
+	d> call specific entityManager method in the respective method.
+
+6>create Service layer
+	a> interface with Service methods
+interface IEmployeeService
+	b> Service Implementation class
+class EmployeeService implements IEmployeeService
+7> In Service Implementation class
+	a> annotate it with @Service
+	b> Inject Dao interface with the help of 
+		@Autowired
+	@Autowired
+	private IEmployeeDao employeeDao;
+
+	
+	c> Override unimplemented method 
+	d> call specific dao layer method in the respective service method.
+
+8> create class EmployeeController	
+	a>@RestController
+	b> @RequestMapping("api/employees")
+
+	c> Inject Service interface with the help of 
+		@Autowired
+@Autowired private IEmployeeService employeeService;
+
+
+
+
+
+
+
+
+
+

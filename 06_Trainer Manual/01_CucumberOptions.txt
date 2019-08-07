@@ -1,0 +1,19 @@
+What is Cucumber Options ?
+In layman language @CucumberOptions are like property file or settings for your test. Basically @CucumberOptions enables us to do all the things that we could have done if we have used cucumber command line. This is very helpful and of utmost importance if we are using IDE such eclipse only to execute our project. 
+
+TestRunner Class
+package cucumberTest;
+ 
+import org.junit.runner.RunWith;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+ 
+@RunWith(Cucumber.class)
+@CucumberOptions(
+ features = "Feature"
+ ,glue={"stepDefinition"}
+ )
+ 
+public class TestRunner {
+ 
+}

@@ -1,0 +1,102 @@
+Spring Day 1
+------------------------
+what
+why
+architecture
+Spring container
+	ApplicationContext
+Demo ( 1 by u and 1 by them)
+DI(xml and annotation)
+	setter
+
+BeanScope
+	Singleton
+	prototype
+
+LifeCycle
+	@PostConstruct @PreDestroy
+	BeanPostProcessor -IntatiationAwareBeanPostProcessor
+	BeanFactoryPostProcessor
+
+AOP -annotation
+	different terms
+	different advice
+	example BankingApp
+-------------------------------
+Day 2
+-------------------------------
+Rest 
+	SOAP- REST
+	Intro -JAX-RS
+	SpringRest
+	Test Rest with PostMan
+	SessionManagement 
+Boot
+	why
+	working	
+	SpringRest boot 
+	SpringRest Boot JPA
+
+Security
+	-form
+	-basic
+
+SpringRest Boot JPA Security
+
+------------------------------------------------
+Spring bean scopes
+The beans in spring container can be created in five scopes. singleton, prototype, request, session and global-session. Learn them in detail.
+
+Spring bean life cycle call back methods
+Spring framework provides following 4 ways for controlling life cycle events of bean:
+
+InitializingBean and DisposableBean callback interfaces
+Other Aware interfaces for specific behavior
+custom init() and destroy() methods in bean configuration file
+@PostConstruct and @PreDestroy annotations
+
+Spring beans autowiring
+In spring framework, setting bean dependencies in configuration files is a good practice to follow, but the spring container is also able to autowire relationships between collaborating beans. This means that it is possible to automatically let Spring resolve collaborators (other beans) for your bean by inspecting the contents of the BeanFactory. 
+
+Bean autowire byType
+Autowiring by type allows a property to be autowired if there is exactly one bean of the property type in the container. If there is more than one, a fatal exception is thrown, and this indicates that you may not use byType autowiring for that bean. 
+
+Bean autowire byName
+Autowiring by name allows a property to be autowired such that it will inspect the container and look for a bean named exactly the same as the property which needs to be autowired.
+
+Bean autowire by constructor
+Autowiring by constructor is similar to byType, but applies to constructor arguments. In autowire enabled bean, it will look for class type of constructor arguments, and then do a autowire by type on all constructor arguments. 
+
+Bean autowire by autodetect
+Autowiring by autodetect uses either of two modes i.e. constructor or byType modes. First it will try to look for valid constructor with arguments, If found the constructor mode is chosen. If there is no constructor defined in bean, or explicit default no-args constructor is present, the autowire byType mode is chosen. 
+
+How to create beans using FactoryBean
+A factory bean is a bean that serves as a factory for creating other beans within the IoC container. Conceptually, a factory bean is very similar to a factory method, but it is a Spring-specific bean that can be identified by the Spring IoC container during bean construction and can be used by container to instantiate other beans. Learn how to create beans using Spring FactoryBean.
+
+How to create beans using static factory method
+In you want to create a bean in the Spring by invoking a static factory method, whose purpose is to encapsulate the object-creation process in a static method then you could use factory-method attribute.
+
+How to declare beans from final static field references using util:constant
+If you have final static fields in some bean and you want to use those references as beans in application context file to inject into another beans, you can do so using <util:constant> tag.
+
+How to load external resources / files into spring context?
+Many times you would like to load external resources or files (e.g. text files, XML files, properties file, or image files) into your spring application context. Spring’s resource loader provides a unified getResource() method for you to retrieve an external resource by a resource path.
+
+How to create bean post processors
+A bean post processor allows additional processing before and after the bean initialization callback method. The main characteristic of a bean post processor is that it will process all the bean instances in the IoC container one by one, not just a single bean instance. Learn to create such post processors using BeanPostProcessor interface class.
+
+How to resolve Text Messages : ResourceBundleMessageSource Example
+For an application to support internationalization, it requires the capability of resolving text messages for different locales. Spring’s application context is able to resolve text messages for a target locale by their keys. Learn how to support i10n using ResourceBundleMessageSource class.
+
+How to publish and listen application events
+Sometimes in your spring application, you may want to add capability of listening specific events so that you can process these events as per application logic. Let’s learn how we can achieve this publish and listen events in your spring application.
+
+How to use @Component, @Repository, @Service and @Controller Annotations?
+With @Component, @Repository, @Service and @Controller annotations in place and after enabling automatic component scanning, spring will automatically import the beans into the container so you don’t have to define them explicitly with XML. These annotations are called Stereotype annotations as well.
+
+@Required Annotation and RequiredAnnotationBeanPostProcessor Example
+In real life application, you will not be interested in checking all the bean properties configured in your context files. Rather you would like to check if particular set of properties have been set or not in some specific beans only. Spring’s dependency checking feature using “dependency-check” attribute, will not able to help you in this case. So solve this problem, you can use @Required annotation.
+
+
+
+

@@ -1,0 +1,61 @@
+package org.jpm.selenium.assignment;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import com.jpm.selenium.util.ChromeUtil;
+
+public class RegistrationForm {
+
+	public static void main(String[] args) throws InterruptedException {
+		// load driver and open browser
+		WebDriver driver = ChromeUtil.getChromeDriver();
+		String url="https://demo.opencart.com/index.php?route=account/register";
+		//open the webpage
+		driver.get(url);
+		Thread.sleep(1000);
+		//maximize the browser window
+		driver.manage().window().maximize();
+		Thread.sleep(1000);
+		driver.findElement(By.id("input-firstname")).sendKeys("Chandra");
+		Thread.sleep(1000);
+		driver.findElement(By.name("lastname")).sendKeys("Kanchapu");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='input-email']")).sendKeys("success.abcdef@gmail.com");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='input-telephone']")).sendKeys("8106306190");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='input-password']")).sendKeys("sek@123");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='input-confirm']")).sendKeys("sek@123");
+		Thread.sleep(1000);
+		
+		//radio button handling 
+		
+		List<WebElement> radioElements = driver.findElements(By.xpath("//*[@id='content']/form/fieldset[3]/div/div/label[1]/input"));
+		for(WebElement radio : radioElements)
+		{
+			String radioSelection=radio.getAttribute("value").toString();
+			
+			//Which radio button to be selected
+			if(radioSelection.equals("1")){
+				radio.click();
+			}
+		}
+		Thread.sleep(1000);
+		
+		WebElement checkEleList = driver.findElement(By.xpath("//*[@id='content']/form/div/div/input[1]"));
+		checkEleList.click();
+		Thread.sleep(1000);
+		
+		WebElement continueBtn = driver.findElement(By.xpath("//*[@id='content']/form/div/div/input[2]"));
+		
+		continueBtn.click();
+		Thread.sleep(10000);
+
+	}
+
+}

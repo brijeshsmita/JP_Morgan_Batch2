@@ -1,0 +1,9 @@
+JUnit acts as a bridge between these two. So, the flow of execution will look like the following -
+Stakeholders write down the feature file.
+Step definition file will be created accordingly.
+Specify the JUnit runner class to run the series of test cases.
+Once we run the JUnit runner class -
+It will parse the Gherkin feature file.
+It will execute the functions written in the step definition file according to feature file statements.
+JUnit will combine the test case result.
+It will build the test report in the specified format (which can be html/JSON).

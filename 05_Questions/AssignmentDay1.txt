@@ -1,0 +1,3 @@
+http://demo.opencart.com/index.php?route=account/register
+
+Test the registration page of the above website
